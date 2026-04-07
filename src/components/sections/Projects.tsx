@@ -8,7 +8,7 @@ export default function Projects() {
       subtitle: "Web Application Project",
       duration: "Mar 2026 – Apr 2026",
       teamSize: "4 members",
-      github: "https://github.com/your-username/inventory-system",
+      github: "https://github.com/minhchuong32/inventory-system",
       description:
         "A full-stack web application for managing inventory (import, export, stock) with real-time tracking, audit trail, and role-based access control.",
       techStack:
@@ -28,7 +28,7 @@ export default function Projects() {
       title: "EduLMS – Learning Management System",
       subtitle: "Personal Project (Full-stack)",
       duration: "Feb 2026 – Mar 2026",
-      github: "https://github.com/your-username/edulms",
+      github: "https://github.com/minhchuong32/EduLMS",
       description:
         "A comprehensive learning platform supporting Admin, Teacher, and Student roles with Role-Based Access Control (RBAC).",
       techStack: "React, Node.js (Express), SQL Server, JWT, TailwindCSS",
@@ -44,7 +44,7 @@ export default function Projects() {
       subtitle: "Team Project",
       duration: "Aug 2025 – Oct 2025",
       teamSize: "3 members",
-      github: "https://github.com/your-username/uteshop",
+      github: "https://github.com/minhchuong32/uteshop-E-commerce-website",
       description:
         "A multi-role e-commerce system (User, Vendor, Admin, Shipper).",
       techStack: "Java Servlet, JSP, JPA, SQL Server, JWT, Bootstrap",

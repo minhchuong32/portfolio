@@ -1,6 +1,8 @@
 import SectionTitle from "../ui/SectionTitle";
 import { Calendar, BookOpen, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import hcmutelogo from "../../assets/hcmute-logo.png";
+import hcmutecampus from "../../assets/hcmute-campus.png";
 
 export default function Education() {
   return (
@@ -28,7 +30,7 @@ export default function Education() {
                 className="overflow-hidden rounded-xl shadow-lg"
               >
                 <img
-                  src="/hcmute-campus.png"
+                  src={hcmutecampus}
                   alt="HCMUTE Campus"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -44,7 +46,7 @@ export default function Education() {
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-5">
                   <img
-                    src="/hcmute-logo.png"
+                    src={hcmutelogo}
                     alt="HCMUTE Logo"
                     className="w-12 h-12 object-contain bg-white p-1 rounded-lg shadow-sm"
                   />

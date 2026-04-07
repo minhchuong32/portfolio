@@ -48,7 +48,7 @@ export default function Hero() {
 
         <div className="flex justify-center gap-4">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-blue-600"
@@ -56,7 +56,7 @@ export default function Hero() {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/minhchuong32"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-gray-800"
