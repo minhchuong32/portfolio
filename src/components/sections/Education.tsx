@@ -1,5 +1,6 @@
 import SectionTitle from "../ui/SectionTitle";
 import { Calendar, BookOpen, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Education() {
   return (
@@ -7,21 +8,39 @@ export default function Education() {
       <div className="max-w-6xl mx-auto">
         <SectionTitle title="Education" subtitle="My academic background" />
 
-        <div className="max-w-5xl mx-auto">
+        {/* Animate whole block */}
+        <motion.div
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl shadow-xl p-6 md:p-8 border border-blue-100">
             {/* Layout 2 cột */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Ảnh bên trái */}
-              <div className="overflow-hidden rounded-xl shadow-lg">
+              <motion.div
+                initial={{ opacity: 0, x: -80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="overflow-hidden rounded-xl shadow-lg"
+              >
                 <img
                   src="/hcmute-campus.png"
                   alt="HCMUTE Campus"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+              </motion.div>
 
-              {/* Nội dung bên phải */}
-              <div>
+              {/*  Nội dung bên phải */}
+              <motion.div
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-5">
                   <img
@@ -97,20 +116,28 @@ export default function Education() {
                     Developing a Full-stack LMS using React & Modern JavaScript
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
-            {/* Google Map full width */}
-            <div className="mt-10 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104819.4862565605!2d106.61947779726565!3d10.850632400000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752763f23816ab%3A0x282f711441b6916f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgS-G7uSB0aHXhuq10IFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e1!3m2!1svi!2sus!4v1775557823134!5m2!1svi!2sus"
-                className="w-full h-[400px] md:h-[500px]"
-                style={{ border: 0 }}
-                loading="lazy"
-              ></iframe>
-            </div>
+            {/* Map */}
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="mt-10 rounded-2xl overflow-hidden shadow-xl border border-gray-200"
+            >
+              <div className=" rounded-2xl overflow-hidden shadow-xl border border-gray-200 group">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104819.4862565605!2d106.61947779726565!3d10.850632400000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752763f23816ab%3A0x282f711441b6916f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgS-G7uSB0aHXhuq10IFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaA!5e1!3m2!1svi!2sus!4v1775557823134!5m2!1svi!2sus"
+                  className="w-full h-[400px] md:h-full-[500px] transition-transform duration-500 ease-out group-hover:scale-105"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

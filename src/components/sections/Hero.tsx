@@ -1,4 +1,12 @@
-import { MapPin, Mail, Phone, Github, Linkedin } from 'lucide-react';
+import {
+  MapPin,
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Facebook,
+  Youtube,
+} from "lucide-react";
 
 export default function Hero() {
   return (
@@ -28,7 +36,9 @@ export default function Hero() {
             className="flex items-center gap-2 hover:text-blue-600 transition-colors"
           >
             <Mail className="w-5 h-5" />
-            <span className="text-sm md:text-base">chuongminh3225@gmail.com</span>
+            <span className="text-sm md:text-base">
+              chuongminh3225@gmail.com
+            </span>
           </a>
           <div className="flex items-center gap-2">
             <MapPin className="w-5 h-5" />
@@ -52,6 +62,22 @@ export default function Hero() {
             className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-gray-800"
           >
             <Github className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.facebook.com/chuong.minh.580786"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-blue-500"
+          >
+            <Facebook className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.youtube.com/@chuwongpahm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-red-600"
+          >
+            <Youtube className="w-6 h-6" />
           </a>
         </div>
 
