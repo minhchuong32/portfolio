@@ -1,13 +1,19 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 px-4">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 px-4"
+    >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Get In Touch</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          Get In Touch
+        </h2>
         <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-8 rounded-full"></div>
         <p className="text-blue-100 text-lg mb-12">
-          I'm actively seeking internship and fresher opportunities. Let's connect!
+          I'm actively seeking internship and fresher opportunities. Let's
+          connect!
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -44,7 +50,7 @@ export default function Contact() {
 
         <div className="flex justify-center gap-4 mb-12">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-blue-600 transition-all duration-200 hover:scale-110"
@@ -52,7 +58,7 @@ export default function Contact() {
             <Linkedin className="w-6 h-6 text-white" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/minhchuong32"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-110"
