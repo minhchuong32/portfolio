@@ -7,6 +7,7 @@ export default function Projects() {
       title: 'EduLMS – Learning Management System',
       subtitle: 'Personal Project (Full-stack)',
       duration: 'Feb 2026 – Mar 2026',
+      github: 'https://github.com/your-username/edulms', 
       description:
         'A comprehensive learning platform supporting Admin, Teacher, and Student roles with Role-Based Access Control (RBAC).',
       techStack: 'React, Node.js (Express), SQL Server, JWT, TailwindCSS',
@@ -22,6 +23,7 @@ export default function Projects() {
       subtitle: 'Team Project',
       duration: 'Aug 2025 – Oct 2025',
       teamSize: '3 members',
+      github: 'https://github.com/your-username/uteshop', 
       description: 'A multi-role e-commerce system (User, Vendor, Admin, Shipper).',
       techStack: 'Java Servlet, JSP, JPA, SQL Server, JWT, Bootstrap',
       achievements: [
@@ -36,6 +38,7 @@ export default function Projects() {
       subtitle: 'Team Project',
       duration: 'May 2025 – Jun 2025',
       teamSize: '3 members',
+      github: 'https://github.com/your-username/hrm-system',
       description: 'An internal management system built with a 3-tier architecture.',
       techStack: 'C# (.NET Framework), WinForms (Guna.UI2), SQL Server, Entity Framework',
       achievements: [
