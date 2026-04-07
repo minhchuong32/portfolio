@@ -95,6 +95,28 @@ export default function Projects() {
       ],
     },
     {
+      title: "Netflix Clone - Movie Streaming UI",
+      subtitle: "Fullstack-like Frontend Project",
+      duration: "Jun 2025",
+      teamSize: "Personal Project",
+      github: "https://github.com/minhchuong32/netflix",
+      description:
+        "A modern Netflix-inspired web application that simulates user authentication and movie browsing experience with trailer playback functionality.",
+      techStack:
+        "React 19, Vite, React Router DOM, Firebase Authentication, TMDB API, React Toastify",
+      achievements: [
+        "Developed a fully responsive Netflix-style UI with dynamic banner and multiple movie rows.",
+        "Implemented user authentication (sign up, login, logout) using Firebase Authentication.",
+        "Built protected routing with automatic redirection based on authentication state.",
+        "Integrated The Movie Database (TMDB) API to fetch real movie data and trailers.",
+        "Created a movie player page that dynamically loads trailers based on selected movie ID.",
+        "Designed reusable components (Navbar, TitleCards, Footer) for scalable architecture.",
+        "Handled API errors and user feedback using React Toastify notifications.",
+        "Optimized project structure using modular React components and clean folder organization.",
+      ],
+    },
+
+    {
       title: "Grocery Mart - E-commerce UI",
       subtitle: "Frontend UI Project",
       duration: "Jul 2024 – Aug 2024",
