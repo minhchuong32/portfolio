@@ -1,82 +1,125 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import SectionTitle from "../ui/SectionTitle";
+import {
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+import { contactLinks, getCvContent, type Language } from "../../data/cv";
 
-export default function Contact() {
+type ContactProps = {
+  language: Language;
+};
+
+export default function Contact({ language }: ContactProps) {
+  const content = getCvContent(language);
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 px-4"
-    >
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-          Get In Touch
-        </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-8 rounded-full"></div>
-        <p className="text-blue-100 text-lg mb-12">
-          I'm actively seeking internship and fresher opportunities. Let's
-          connect!
-        </p>
+    <section id="contact" className="px-4 py-20 md:py-24">
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle
+          eyebrow={content.contactSection.eyebrow}
+          title={content.contactSection.title}
+          subtitle={content.contactSection.subtitle}
+        />
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <a
-            href="mailto:chuongminh3225@gmail.com"
-            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-200 group"
-          >
-            <div className="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-              <Mail className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Email</h3>
-            <p className="text-blue-200 text-sm">chuongminh3225@gmail.com</p>
-          </a>
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[2rem] bg-slate-950 p-6 text-white shadow-[0_24px_80px_rgba(15,23,42,0.18)] md:p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-sky-200">
+              {content.contact.title}
+            </p>
+            <h3 className="mt-4 text-3xl font-display font-bold">
+              {content.contact.subtitle}
+            </h3>
+            <p className="mt-4 max-w-xl leading-7 text-slate-300">
+              {content.contact.overview}
+            </p>
 
-          <a
-            href="tel:+84977692690"
-            className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-200 group"
-          >
-            <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-              <Phone className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-white font-semibold mb-2">Phone</h3>
-            <p className="text-blue-200 text-sm">+84 977 692 690</p>
-          </a>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <a
+                href={`mailto:${contactLinks.email}`}
+                className="min-w-0 rounded-3xl border border-white/10 bg-white/5 p-5 transition-transform hover:-translate-y-1 hover:bg-white/10"
+              >
+                <Mail className="h-6 w-6 text-sky-300" />
+                <p className="mt-4 text-sm uppercase tracking-[0.25em] text-slate-400">
+                  Email
+                </p>
+                <p className="mt-2 break-all text-sm font-medium leading-6 text-white">
+                  {contactLinks.email}
+                </p>
+              </a>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-            <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MapPin className="w-6 h-6 text-white" />
+              <a
+                href={`tel:${contactLinks.phone.replace(/\s/g, "")}`}
+                className="min-w-0 rounded-3xl border border-white/10 bg-white/5 p-5 transition-transform hover:-translate-y-1 hover:bg-white/10"
+              >
+                <Phone className="h-6 w-6 text-emerald-300" />
+                <p className="mt-4 text-sm uppercase tracking-[0.25em] text-slate-400">
+                  Phone
+                </p>
+                <p className="mt-2 break-words text-sm font-medium leading-6 text-white">
+                  {contactLinks.phone}
+                </p>
+              </a>
+
+              <div className="min-w-0 rounded-3xl border border-white/10 bg-white/5 p-5">
+                <MapPin className="h-6 w-6 text-amber-300" />
+                <p className="mt-4 text-sm uppercase tracking-[0.25em] text-slate-400">
+                  Location
+                </p>
+                <p className="mt-2 break-words text-sm font-medium leading-6 text-white">
+                  {contactLinks.location}
+                </p>
+              </div>
             </div>
-            <h3 className="text-white font-semibold mb-2">Location</h3>
-            <p className="text-blue-200 text-sm">Ho Chi Minh City</p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={contactLinks.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href={contactLinks.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+              >
+                <Github className="h-4 w-4" />
+                GitHub
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="flex justify-center gap-4 mb-12">
-          <a
-            href="https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-blue-600 transition-all duration-200 hover:scale-110"
-          >
-            <Linkedin className="w-6 h-6 text-white" />
-          </a>
-          <a
-            href="https://github.com/minhchuong32"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-110"
-          >
-            <Github className="w-6 h-6 text-white" />
-          </a>
-          <a
-            href="mailto:chuongminh3225@gmail.com"
-            className="bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-green-600 transition-all duration-200 hover:scale-110"
-          >
-            <Send className="w-6 h-6 text-white" />
-          </a>
-        </div>
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.06)] md:p-8">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">
+              {language === "en" ? "Profile summary" : "Tóm tắt hồ sơ"}
+            </p>
+            <h3 className="mt-4 text-3xl font-display font-bold text-slate-950">
+              {content.contact.profileSummary}
+            </h3>
+            <p className="mt-4 leading-7 text-slate-600">
+              {content.contact.overview}
+            </p>
 
-        <div className="border-t border-white/20 pt-8">
-          <p className="text-blue-200">
-            © 2026 Pham Han Minh Chuong. Built with React & TailwindCSS
-          </p>
+            <div className="mt-8 space-y-4">
+              {content.contact.points.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,93 +1,197 @@
 import {
-  MapPin,
-  Mail,
-  Phone,
+  ArrowRight,
+  Briefcase,
+  Download,
   Github,
   Linkedin,
-  Facebook,
-  Youtube,
+  Mail,
+  MapPin,
+  Phone,
 } from "lucide-react";
+import { cvUrl, getCvContent, heroProfile, type Language } from "../../data/cv";
 
-export default function Hero() {
+type HeroProps = {
+  language: Language;
+};
+
+export default function Hero({ language }: HeroProps) {
+  const content = getCvContent(language);
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 px-4 py-20">
-      <div className="max-w-4xl w-full text-center">
-        <div className="mb-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 tracking-tight">
-            Pham Han Minh Chuong
-          </h1>
-          <div className="h-1 w-32 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-2xl md:text-3xl text-gray-700 font-medium mb-8">
-            Frontend Developer
-          </p>
-          <p className="text-lg text-gray-600 mb-2">Intern/Fresher Position</p>
-        </div>
+    <section
+      id="home"
+      className="relative overflow-hidden px-4 pb-20 pt-28 md:pb-28 md:pt-32"
+    >
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute left-[-12%] top-[-8%] h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
+        <div className="absolute right-[-8%] top-24 h-80 w-80 rounded-full bg-indigo-400/15 blur-3xl" />
+      </div>
 
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10 text-gray-600">
-          <a
-            href="tel:+84977692690"
-            className="flex items-center gap-2 hover:text-blue-600 transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            <span className="text-sm md:text-base">+84 977 692 690</span>
-          </a>
-          <a
-            href="mailto:chuongminh3225@gmail.com"
-            className="flex items-center gap-2 hover:text-blue-600 transition-colors"
-          >
-            <Mail className="w-5 h-5" />
-            <span className="text-sm md:text-base">
-              chuongminh3225@gmail.com
-            </span>
-          </a>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-5 h-5" />
-            <span className="text-sm md:text-base">Ho Chi Minh City</span>
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 shadow-sm backdrop-blur">
+            <Briefcase className="h-4 w-4 text-sky-700" />
+            {content.hero.badge}
+          </div>
+
+          <h1 className="font-display max-w-3xl text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            {content.hero.name}
+          </h1>
+          <p className="mt-5 text-2xl font-semibold text-sky-800 sm:text-3xl">
+            {content.hero.role} · {content.hero.level}
+          </p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            {content.hero.summary}
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {content.hero.highlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm backdrop-blur"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {content.hero.stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-3xl border border-white/80 bg-white/80 p-4 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur"
+              >
+                <p className="text-2xl font-bold text-slate-950">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-sm text-slate-600">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-4 text-slate-600">
+            <a
+              href={`mailto:${heroProfile.email}`}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium shadow-sm transition-transform hover:-translate-y-0.5 hover:text-sky-700"
+            >
+              <Mail className="h-4 w-4" />
+              {heroProfile.email}
+            </a>
+            <a
+              href={`tel:${heroProfile.phone.replace(/\s/g, "")}`}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium shadow-sm transition-transform hover:-translate-y-0.5 hover:text-sky-700"
+            >
+              <Phone className="h-4 w-4" />
+              {heroProfile.phone}
+            </a>
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium shadow-sm">
+              <MapPin className="h-4 w-4" />
+              {heroProfile.location}
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/20 transition-transform hover:-translate-y-0.5"
+            >
+              {content.hero.viewProjects}
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-transform hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700"
+            >
+              {content.hero.contactMe}
+            </a>
+            <a
+              href={cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm transition-transform hover:-translate-y-0.5 hover:border-sky-300 hover:text-sky-700"
+            >
+              <Download className="h-4 w-4" />
+              {content.hero.viewCv}
+            </a>
           </div>
         </div>
 
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-blue-600"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="https://github.com/minhchuong32"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-gray-800"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.facebook.com/chuong.minh.580786"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-blue-500"
-          >
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.youtube.com/@chuwongpahm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 text-red-600"
-          >
-            <Youtube className="w-6 h-6" />
-          </a>
-        </div>
+        <div className="relative mx-auto w-full max-w-xl">
+          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-sky-400/20 via-white/60 to-indigo-400/20 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/80 bg-white/80 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+            <div className="overflow-hidden rounded-[1.5rem] bg-slate-100">
+              <img
+                src={heroProfile.portrait}
+                alt="Pham Han Minh Chuong portrait"
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-        <div className="mt-12">
-          <a
-            href="#projects"
-            className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
-          >
-            View My Work
-          </a>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl bg-slate-950 px-4 py-4 text-white">
+                <p className="text-xs uppercase tracking-[0.28em] text-sky-200">
+                  {content.hero.targetRoleLabel}
+                </p>
+                <p className="mt-2 text-lg font-semibold">
+                  {content.hero.targetRole}
+                </p>
+                <p className="mt-1 text-sm text-slate-300">
+                  {content.hero.level}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-4">
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+                  {content.hero.focusLabel}
+                </p>
+                <p className="mt-2 text-lg font-semibold text-slate-950">
+                  {content.hero.focus}
+                </p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Component-based architecture
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-4">
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+                  {content.hero.primaryStackLabel}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-950">
+                  {content.hero.primaryStack}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white px-4 py-4">
+                <p className="text-xs uppercase tracking-[0.28em] text-slate-500">
+                  {content.hero.experienceLabel}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-950">
+                  {content.hero.experience}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a
+                href={heroProfile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+              <a
+                href={heroProfile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Github className="h-4 w-4" />
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

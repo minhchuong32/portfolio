@@ -1,76 +1,72 @@
-import { Calendar, Users, Github } from "lucide-react";
+import { Calendar, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
-  subtitle: string;
+  projectType: string;
   duration: string;
   description: string;
-  techStack: string;
+  techStack: string[];
   achievements: string[];
-  highlightsLabel?: string;
-  teamSize?: string;
   github?: string;
 }
 
 export default function ProjectCard({
   title,
-  subtitle,
+  projectType,
   duration,
   description,
   techStack,
   achievements,
-  highlightsLabel = "Key Achievements",
-  teamSize,
   github,
 }: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200 group">
+    <div className="group overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/80 shadow-[0_18px_60px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(15,23,42,0.12)] backdrop-blur">
       <div className="p-6 md:p-8">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-          <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+        <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+          <h3 className="text-2xl font-display font-bold text-slate-950 transition-colors group-hover:text-sky-700">
             {title}
           </h3>
 
-          <div className="flex items-center gap-4 text-sm text-gray-600 flex-wrap">
-            {teamSize && (
-              <span className="flex items-center gap-1 bg-gray-100 px-3 py-1 rounded-full">
-                <Users className="w-4 h-4" />
-                {teamSize}
-              </span>
-            )}
-
-            <span className="flex items-center gap-1 bg-blue-50 px-3 py-1 rounded-full text-blue-700">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600">
+            <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 font-medium text-slate-700">
+              {projectType}
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1 font-medium text-sky-700">
               <Calendar className="w-4 h-4" />
               {duration}
             </span>
           </div>
         </div>
 
-        {/* Subtitle + Description */}
-        <p className="text-sm font-medium text-gray-500 mb-3">{subtitle}</p>
-        <p className="text-gray-700 mb-4 leading-relaxed">{description}</p>
+        <p className="mb-4 leading-7 text-slate-600">{description}</p>
 
-        {/* Tech stack */}
-        <div className="mb-4">
-          <span className="text-sm font-semibold text-gray-700">
-            Tech Stack:{" "}
-          </span>
-          <span className="text-sm text-gray-600">{techStack}</span>
+        <div className="mb-5">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            Tech Stack
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-700"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Achievements */}
         <div>
-          <h4 className="text-sm font-semibold text-gray-700 mb-2">
-            {highlightsLabel}:
+          <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+            Highlights
           </h4>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {achievements.map((achievement, index) => (
               <li
                 key={index}
-                className="flex items-start gap-2 text-sm text-gray-600"
+                className="flex items-start gap-3 text-sm text-slate-600"
               >
-                <span className="text-blue-500 mt-1 flex-shrink-0">▹</span>
+                <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500" />
                 <span className="leading-relaxed">{achievement}</span>
               </li>
             ))}
@@ -83,7 +79,7 @@ export default function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-black transition-all duration-200"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
             >
               <Github className="w-4 h-4" />
               View on GitHub
