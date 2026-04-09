@@ -1,4 +1,4 @@
-import { Calendar, Users, Github } from 'lucide-react';
+import { Calendar, Users, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -7,8 +7,9 @@ interface ProjectCardProps {
   description: string;
   techStack: string;
   achievements: string[];
+  highlightsLabel?: string;
   teamSize?: string;
-  github?: string; 
+  github?: string;
 }
 
 export default function ProjectCard({
@@ -18,8 +19,9 @@ export default function ProjectCard({
   description,
   techStack,
   achievements,
+  highlightsLabel = "Key Achievements",
   teamSize,
-  github, 
+  github,
 }: ProjectCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200 group">
@@ -51,18 +53,23 @@ export default function ProjectCard({
 
         {/* Tech stack */}
         <div className="mb-4">
-          <span className="text-sm font-semibold text-gray-700">Tech Stack: </span>
+          <span className="text-sm font-semibold text-gray-700">
+            Tech Stack:{" "}
+          </span>
           <span className="text-sm text-gray-600">{techStack}</span>
         </div>
 
         {/* Achievements */}
         <div>
           <h4 className="text-sm font-semibold text-gray-700 mb-2">
-            Key Achievements:
+            {highlightsLabel}:
           </h4>
           <ul className="space-y-2">
             {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+              <li
+                key={index}
+                className="flex items-start gap-2 text-sm text-gray-600"
+              >
                 <span className="text-blue-500 mt-1 flex-shrink-0">▹</span>
                 <span className="leading-relaxed">{achievement}</span>
               </li>
