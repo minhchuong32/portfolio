@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Download, Languages, Menu, X } from "lucide-react";
 import { cvUrl, getCvContent, type Language } from "../data/cv";
+import logo from "../assets/logo.png";
 
 type NavigationProps = {
   language: Language;
@@ -51,8 +52,12 @@ export default function Navigation({
             onClick={(e) => scrollToSection(e, "#home")}
             className="flex items-center gap-3 text-slate-900 transition-colors hover:text-sky-700"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold tracking-[0.35em] text-white shadow-lg shadow-slate-900/15">
-              PH
+            <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-slate-900 shadow-lg shadow-slate-900/15">
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-full w-full object-cover"
+              />
             </span>
             <span className="hidden sm:block">
               <span className="block text-xs uppercase tracking-[0.35em] text-slate-500">

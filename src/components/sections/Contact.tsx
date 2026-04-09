@@ -1,11 +1,13 @@
 import SectionTitle from "../ui/SectionTitle";
 import {
   ArrowUpRight,
+  Facebook,
   Github,
   Linkedin,
   Mail,
   MapPin,
   Phone,
+  Youtube,
 } from "lucide-react";
 import { contactLinks, getCvContent, type Language } from "../../data/cv";
 
@@ -79,7 +81,7 @@ export default function Contact({ language }: ContactProps) {
                 href={contactLinks.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition-transform hover:-translate-y-0.5"
+                className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-600/20 transition-transform hover:-translate-y-0.5"
               >
                 <Linkedin className="h-4 w-4" />
                 LinkedIn
@@ -89,10 +91,30 @@ export default function Contact({ language }: ContactProps) {
                 href={contactLinks.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
+                className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-black/10 transition-transform hover:-translate-y-0.5"
               >
                 <Github className="h-4 w-4" />
                 GitHub
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href={contactLinks.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded-full bg-[#1877F2] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1877F2]/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Facebook className="h-4 w-4" />
+                Facebook
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href={contactLinks.youtube}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex flex-nowrap items-center gap-2 whitespace-nowrap rounded-full bg-[#FF0000] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FF0000]/20 transition-transform hover:-translate-y-0.5"
+              >
+                <Youtube className="h-4 w-4" />
+                YouTube
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>

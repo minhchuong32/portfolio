@@ -1,4 +1,4 @@
-import pmcPortrait from "../assets/pmc.png";
+import pmcPortrait from "../assets/phmc.png";
 import hcmuteCampus from "../assets/hcmute-campus.png";
 import hcmuteLogo from "../assets/hcmute-logo.png";
 
@@ -25,6 +25,8 @@ type HeroCopy = {
   location: string;
   linkedin: string;
   github: string;
+  facebook: string;
+  youtube: string;
   portrait: string;
   summary: string;
   highlights: string[];
@@ -108,6 +110,8 @@ export const cvContent: Record<Language, LanguageContent> = {
       location: "Ho Chi Minh City",
       linkedin: "https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/",
       github: "https://github.com/minhchuong32",
+      facebook: "https://www.facebook.com/chuong.minh.580786/",
+      youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
         "Frontend developer focused on responsive, component-driven interfaces with React, TypeScript, and TailwindCSS. I like turning product requirements into clean user flows, role-based screens, and API-driven experiences.",
@@ -339,6 +343,8 @@ export const cvContent: Record<Language, LanguageContent> = {
       location: "Ho Chi Minh City",
       linkedin: "https://www.linkedin.com/in/pham-han-minh-chuong-43b95830b/",
       github: "https://github.com/minhchuong32",
+      facebook: "https://www.facebook.com/chuong.minh.580786/",
+      youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
         "Lập trình viên frontend tập trung vào giao diện responsive, hướng component với React, TypeScript và TailwindCSS. Mình thích biến yêu cầu sản phẩm thành luồng sử dụng rõ ràng, màn hình theo vai trò, và trải nghiệm kết nối API mượt.",
@@ -564,6 +570,8 @@ export const contactLinks = {
   location: heroProfile.location,
   linkedin: heroProfile.linkedin,
   github: heroProfile.github,
+  facebook: heroProfile.facebook,
+  youtube: heroProfile.youtube,
 };
 
 export function getCvContent(language: Language) {
