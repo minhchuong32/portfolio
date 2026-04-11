@@ -559,7 +559,7 @@ export const cvContent: Record<Language, LanguageContent> = {
 export const heroProfile = cvContent.en.hero;
 export const navigationItems = cvContent.en.navigationItems;
 export const cvUrl =
-  "https://drive.google.com/file/d/1GNS5p8bc5ftMO5KDuRMaq6re9hCVYopI/view?usp=drive_link";
+  "https://drive.google.com/file/d/14yU0cZmwNNcwTjlYO7SHmezUz8VWhX80/view?usp=sharing";
 export const educationMedia = {
   portrait: hcmuteCampus,
   logo: hcmuteLogo,
