@@ -78,7 +78,7 @@ type LanguageContent = {
   hero: HeroCopy;
   skillsSection: SectionTitleCopy;
   skills: Array<{
-    key: "core" | "frameworks" | "state" | "backend" | "tools" | "concepts";
+    key: "core" | "frameworks" | "uiux" | "state" | "backend" | "tools" | "concepts";
     title: string;
     description: string;
     skills: string[];
@@ -103,7 +103,7 @@ export const cvContent: Record<Language, LanguageContent> = {
     hero: {
       badge: "CV Portfolio 2026",
       name: "PHAM HAN MINH CHUONG",
-      role: "Frontend Developer",
+      role: "Frontend Developer (ReactJS)",
       level: "Intern / Fresher",
       email: "chuongminh3225@gmail.com",
       phone: "+84 977 692 690",
@@ -114,20 +114,20 @@ export const cvContent: Record<Language, LanguageContent> = {
       youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
-        "Frontend developer focused on responsive, component-driven interfaces with React, TypeScript, and TailwindCSS. I like turning product requirements into clean user flows, role-based screens, and API-driven experiences.",
-      highlights: ["React", "TailwindCSS", "Context API", "Axios", "JWT"],
+        "Frontend developer focused on ReactJS, Vite, and TailwindCSS. Experienced in designing UI/UX prototypes, building reusable component architectures, and integrating RESTful APIs across e-commerce, LMS, inventory management, and learning platforms.",
+      highlights: ["ReactJS", "Vite", "Redux Toolkit", "Context API", "TailwindCSS", "Axios", "RESTful API"],
       stats: [
-        { label: "Featured Projects", value: "4" },
+        { label: "Featured Projects", value: "5" },
         { label: "Education", value: "HCMUTE" },
         { label: "Focus", value: "Frontend" },
       ],
-      targetRole: "Frontend Developer",
+      targetRole: "Frontend Developer (ReactJS)",
       targetRoleLabel: "Target Role",
-      focus: "Responsive UI",
+      focus: "Responsive UI & API Integration",
       focusLabel: "Focus",
-      primaryStack: "React, TailwindCSS, Context API",
+      primaryStack: "ReactJS, Vite, TailwindCSS, Context API",
       primaryStackLabel: "Primary Stack",
-      experience: "LMS, E-commerce, Mobile-first UI",
+      experience: "FlashLearn, Inventory, EduLMS, E-commerce",
       experienceLabel: "Experience",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
@@ -146,13 +146,19 @@ export const cvContent: Record<Language, LanguageContent> = {
         title: "Core",
         description:
           "Foundations I use to build solid interfaces and maintainable code.",
-        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"],
+        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript (basic)"],
       },
       {
         key: "frameworks",
         title: "Frameworks & Libraries",
         description: "My main UI stack for modern frontend applications.",
-        skills: ["ReactJS", "Vite", "TailwindCSS", "Sass", "Bootstrap"],
+        skills: ["ReactJS", "Vite", "TailwindCSS", "Bootstrap"],
+      },
+      {
+        key: "uiux",
+        title: "UI / UX",
+        description: "Prototyping, wireframing, and responsive web design.",
+        skills: ["Figma", "Wireframing", "Responsive Design"],
       },
       {
         key: "state",
@@ -165,43 +171,75 @@ export const cvContent: Record<Language, LanguageContent> = {
         key: "backend",
         title: "Backend (Basic)",
         description:
-          "Enough backend experience to coordinate frontend and API work.",
-        skills: ["Node.js", "Express", "SQL Server", "MongoDB"],
+          "Basic backend knowledge to coordinate frontend and API work.",
+        skills: ["Node.js", "Express", "MongoDB", "SQL Server"],
       },
       {
         key: "tools",
         title: "Tools",
         description:
           "Daily tooling for design handoff, debugging, and delivery.",
-        skills: ["Git/GitHub", "Figma", "Postman", "VS Code"],
-      },
-      {
-        key: "concepts",
-        title: "Concepts",
-        description:
-          "Software engineering principles behind the interfaces I build.",
-        skills: [
-          "OOP",
-          "MVC",
-          "Component-based Architecture",
-          "Responsive Design / Mobile-first",
-        ],
+        skills: ["Git/GitHub", "Figma", "Postman"],
       },
     ],
     projectsSection: {
       eyebrow: "Projects",
       title: "Selected work",
       subtitle:
-        "The projects below reflect the experience and technologies from my CV, with a frontend-first emphasis.",
+        "The projects below reflect the updated experience and technologies from my CV.",
     },
     projects: [
+      {
+        title: "FlashLearn – English Learning Platform",
+        projectType: "Team · 4 members",
+        duration: "05/2026 – 07/2026",
+        github: "https://github.com/TDQuecHi227/LearningEnglishFullStack",
+        techStack: [
+          "React",
+          "Vite",
+          "Redux Toolkit",
+          "React Router",
+          "Tailwind CSS",
+          "Node.js",
+          "Express",
+          "MongoDB",
+        ],
+        description:
+          "A web-based English learning platform that helps users learn vocabulary through flashcards, quizzes, and personalized learning progress.",
+        achievements: [
+          "Designed UI/UX prototypes in Figma and developed responsive React interfaces.",
+          "Built the frontend architecture with reusable components and Redux Toolkit.",
+          "Integrated RESTful APIs and contributed to the VNPay payment API.",
+        ],
+      },
+      {
+        title: "Inventory – Management System",
+        projectType: "Team · 4 members",
+        duration: "03/2026 – 04/2026",
+        github: "https://github.com/minhchuong32/inventory-system",
+        techStack: [
+          "Spring Boot",
+          "Spring Security",
+          "Spring Data JPA",
+          "Thymeleaf",
+          "PostgreSQL (SQL Server)",
+          "Docker",
+        ],
+        description:
+          "A web-based inventory management system for small and medium-sized businesses, supporting warehouse operations, inventory tracking, and role-based access control.",
+        achievements: [
+          "Designed and developed responsive web interfaces using Thymeleaf, Bootstrap, and HTML/CSS, focusing on usability and inventory management workflows.",
+          "Implemented Import Order and Export Order modules, including creating transactions, validating inventory quantities, updating stock levels, and managing order status.",
+          "Applied the Observer Design Pattern to automatically handle inventory-related events, such as stock movement updates and low-stock notifications, improving system maintainability.",
+        ],
+      },
       {
         title: "EduLMS – Learning Management System",
         projectType: "Personal",
         duration: "02/2026 – 03/2026",
         github: "https://github.com/minhchuong32/EduLMS",
         techStack: [
-          "React",
+          "React",    
           "Tailwind CSS",
           "Context API",
           "Node.js",
@@ -211,11 +249,11 @@ export const cvContent: Record<Language, LanguageContent> = {
           "Axios",
         ],
         description:
-          "Designed a multi-role LMS UI for Admin, Teacher, and Student with role-based screens and API-driven workflows.",
+          "A web-based multi-role Learning Management System UI supporting Admin, Teacher, and Student workflows.",
         achievements: [
-          "Designed the dashboard, course management, lesson viewer, and assignment flows for three separate roles.",
+          "Designed multi-role UI (Admin / Teacher / Student): dashboard, course management, lesson viewer, assignments.",
           "Implemented JWT-based role rendering, Context API state management, and Axios API integration.",
-          "Built interactive features including quiz interface, assignment submission, comments, and notifications.",
+          "Built interactive features: quiz interface, assignment submission, comments, and notifications.",
         ],
       },
       {
@@ -235,11 +273,10 @@ export const cvContent: Record<Language, LanguageContent> = {
           "Cloudinary",
         ],
         description:
-          "Built a full e-commerce flow with product discovery, cart, checkout, online payment, and order tracking.",
+          "Full-stack e-commerce web application featuring product discovery, cart, online payment, and order tracking.",
         achievements: [
-          "Implemented Context API state management for cart and user session.",
-          "Integrated Stripe for payment and Cloudinary for media upload.",
-          "Delivered product listing, checkout, and order tracking screens with responsive UI.",
+          "Built full e-commerce flow: product listing, cart, checkout, online payment (Stripe), and order tracking.",
+          "Implemented Context API state management for cart and user session; integrated Cloudinary for media upload.",
         ],
       },
       {
@@ -256,31 +293,11 @@ export const cvContent: Record<Language, LanguageContent> = {
           "Bootstrap",
         ],
         description:
-          "Designed and developed a multi-role e-commerce UI for Guest, User, Vendor, Admin, and Shipper workflows.",
+          "A full-stack e-commerce platform supporting multiple roles (Guest, User, Vendor, Admin, Shipper) with online payments and order management.",
         achievements: [
-          "Designed wireframes and user journeys for a multi-role system.",
-          "Built reusable JSP/JSTL components with Sitemesh decorator pattern for consistent layouts.",
-          "Delivered auth UI for login, register, OTP, Google login, and admin dashboards for users, products, and orders.",
-        ],
-      },
-      {
-        title: "Grocery Mart – E-commerce UI",
-        projectType: "Personal",
-        duration: "07/2024 – 08/2024",
-        github: "https://github.com/minhchuong32/grocery_mart",
-        techStack: [
-          "HTML5",
-          "SCSS (7-1 pattern)",
-          "Vanilla JavaScript",
-          "Fetch API",
-          "LocalStorage",
-        ],
-        description:
-          "Built a mobile-first e-commerce UI with template loading, persistent state, and dark/light theme support.",
-        achievements: [
-          "Created product listing, cart, checkout, and profile screens with a mobile-first responsive layout.",
-          "Implemented dark/light mode through CSS variables and localStorage persistence.",
-          "Added dynamic template loading with Fetch API and localStorage caching.",
+          "Designed the frontend architecture and reusable UI structure.",
+          "Developed authentication, authorization, and Admin interfaces using JSP, JSTL, and Bootstrap.",
+          "Contributed to Admin backend APIs and business logic.",
         ],
       },
     ],
@@ -297,7 +314,7 @@ export const cvContent: Record<Language, LanguageContent> = {
       gpa: "3.2 / 4.0",
       location: "Ho Chi Minh City",
       summary:
-        "Relevant coursework includes Data Structures & Algorithms, Web Development, Database Management, Computer Networks, and Software Engineering.",
+        "Relevant Coursework: Data Structures & Algorithms, Web Development, Database Management, Computer Networks, Software Engineering.",
       courses: [
         "Data Structures & Algorithms",
         "Web Development",
@@ -310,17 +327,17 @@ export const cvContent: Record<Language, LanguageContent> = {
       eyebrow: "Contact",
       title: "Let's connect",
       subtitle:
-        "Open to frontend internship and fresher opportunities. I am available through the channels below.",
+        "Open to Frontend Developer (ReactJS) Intern or Fresher opportunities. I am available through the channels below.",
     },
     contact: {
       title: "Quick contact",
       subtitle: "Fastest ways to reach me",
       overview:
         "I am open to frontend opportunities where I can contribute to clean UI, smooth interaction flows, and reliable API integration.",
-      profileSummary: "Frontend Developer · Intern / Fresher",
+      profileSummary: "Frontend Developer (ReactJS) · Intern / Fresher",
       points: [
-        "React, TailwindCSS, Context API, Axios, and JWT-focused frontend delivery",
-        "Experience across LMS, e-commerce, and mobile-first product interfaces",
+        "ReactJS, Vite, Redux Toolkit, Context API, Axios, and JWT-focused frontend delivery",
+        "Experience across FlashLearn (English platform), Inventory System, LMS, and E-commerce applications",
         "Available in Ho Chi Minh City for internship or fresher roles",
       ],
     },
@@ -336,8 +353,8 @@ export const cvContent: Record<Language, LanguageContent> = {
     hero: {
       badge: "Hồ sơ CV 2026",
       name: "PHAM HAN MINH CHUONG",
-      role: "Lập trình viên Frontend",
-      level: "Thực tập sinh / Fresher",
+      role: "Frontend Developer (ReactJS)",
+      level: "Intern / Fresher",
       email: "chuongminh3225@gmail.com",
       phone: "+84 977 692 690",
       location: "Ho Chi Minh City",
@@ -347,20 +364,20 @@ export const cvContent: Record<Language, LanguageContent> = {
       youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
-        "Lập trình viên frontend tập trung vào giao diện responsive, hướng component với React, TypeScript và TailwindCSS. Mình thích biến yêu cầu sản phẩm thành luồng sử dụng rõ ràng, màn hình theo vai trò, và trải nghiệm kết nối API mượt.",
-      highlights: ["React", "TailwindCSS", "Context API", "Axios", "JWT"],
+        "Lập trình viên Frontend chuyên về ReactJS, Vite và TailwindCSS. Có kinh nghiệm thiết kế prototype UI/UX, xây dựng kiến trúc component tái sử dụng và tích hợp RESTful API cho ứng dụng thương mại điện tử, LMS, quản lý kho hàng và nền tảng học tiếng Anh.",
+      highlights: ["ReactJS", "Vite", "Redux Toolkit", "Context API", "TailwindCSS", "Axios", "RESTful API"],
       stats: [
-        { label: "Dự án nổi bật", value: "4" },
+        { label: "Dự án nổi bật", value: "5" },
         { label: "Học vấn", value: "HCMUTE" },
         { label: "Định hướng", value: "Frontend" },
       ],
-      targetRole: "Lập trình viên Frontend",
+      targetRole: "Frontend Developer (ReactJS)",
       targetRoleLabel: "Vai trò mục tiêu",
-      focus: "Giao diện responsive",
+      focus: "Giao diện Responsive & API Integration",
       focusLabel: "Tập trung",
-      primaryStack: "React, TailwindCSS, Context API",
+      primaryStack: "ReactJS, Vite, TailwindCSS, Context API",
       primaryStackLabel: "Stack chính",
-      experience: "LMS, E-commerce, UI mobile-first",
+      experience: "FlashLearn, Inventory, EduLMS, E-commerce",
       experienceLabel: "Kinh nghiệm",
       viewProjects: "Xem dự án",
       contactMe: "Liên hệ",
@@ -369,7 +386,7 @@ export const cvContent: Record<Language, LanguageContent> = {
     },
     skillsSection: {
       eyebrow: "Kỹ năng kỹ thuật",
-      title: "Mình làm việc với gì",
+      title: "Bộ kỹ năng chuyên môn",
       subtitle:
         "Bộ công cụ ưu tiên frontend, xoay quanh UI sạch, quản lý state, tích hợp API và triển khai thực tế.",
     },
@@ -379,13 +396,19 @@ export const cvContent: Record<Language, LanguageContent> = {
         title: "Cốt lõi",
         description:
           "Nền tảng mình dùng để xây giao diện chắc chắn và dễ bảo trì.",
-        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"],
+        skills: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript (basic)"],
       },
       {
         key: "frameworks",
         title: "Framework & Thư viện",
         description: "Stack UI chính cho ứng dụng frontend hiện đại.",
-        skills: ["ReactJS", "Vite", "TailwindCSS", "Sass", "Bootstrap"],
+        skills: ["ReactJS", "Vite", "TailwindCSS", "Bootstrap"],
+      },
+      {
+        key: "uiux",
+        title: "UI / UX",
+        description: "Thiết kế prototype, wireframe và bố cục responsive web.",
+        skills: ["Figma", "Wireframing", "Responsive Design"],
       },
       {
         key: "state",
@@ -395,35 +418,68 @@ export const cvContent: Record<Language, LanguageContent> = {
       },
       {
         key: "backend",
-        title: "Backend (cơ bản)",
+        title: "Backend (Cơ bản)",
         description: "Đủ để phối hợp frontend với API và dữ liệu.",
-        skills: ["Node.js", "Express", "SQL Server", "MongoDB"],
+        skills: ["Node.js", "Express", "MongoDB", "SQL Server"],
       },
       {
         key: "tools",
         title: "Công cụ",
         description: "Công cụ hằng ngày cho thiết kế, debug và bàn giao.",
-        skills: ["Git/GitHub", "Figma", "Postman", "VS Code"],
-      },
-      {
-        key: "concepts",
-        title: "Khái niệm",
-        description: "Các nguyên tắc mình áp dụng khi xây giao diện và logic.",
-        skills: [
-          "OOP",
-          "MVC",
-          "Component-based Architecture",
-          "Responsive Design / Mobile-first",
-        ],
+        skills: ["Git/GitHub", "Figma", "Postman"],
       },
     ],
     projectsSection: {
       eyebrow: "Dự án",
       title: "Các dự án tiêu biểu",
       subtitle:
-        "Những dự án dưới đây phản ánh đúng kinh nghiệm và công nghệ trong CV, với trọng tâm là frontend.",
+        "Những dự án dưới đây phản ánh đúng kinh nghiệm và công nghệ trong CV mới nhất.",
     },
     projects: [
+      {
+        title: "FlashLearn – English Learning Platform",
+        projectType: "Nhóm · 4 thành viên",
+        duration: "05/2026 – 07/2026",
+        github: "https://github.com/minhchuong32",
+        techStack: [
+          "React",
+          "Vite",
+          "Redux Toolkit",
+          "React Router",
+          "Tailwind CSS",
+          "Node.js",
+          "Express",
+          "MongoDB",
+        ],
+        description:
+          "Nền tảng học tiếng Anh trực tuyến hỗ trợ người dùng học từ vựng qua flashcard, bài kiểm tra và tiến trình học tập cá nhân hóa.",
+        achievements: [
+          "Thiết kế prototype UI/UX trên Figma và phát triển giao diện React responsive.",
+          "Xây dựng kiến trúc frontend với các component tái sử dụng và Redux Toolkit.",
+          "Tích hợp RESTful API và đóng góp tích hợp API thanh toán VNPay.",
+        ],
+      },
+      {
+        title: "Inventory – Management System",
+        projectType: "Nhóm · 4 thành viên",
+        duration: "03/2026 – 04/2026",
+        github: "https://github.com/minhchuong32",
+        techStack: [
+          "Spring Boot",
+          "Spring Security",
+          "Spring Data JPA",
+          "Thymeleaf",
+          "PostgreSQL (SQL Server)",
+          "Docker",
+        ],
+        description:
+          "Hệ thống quản lý kho hàng trực tuyến cho doanh nghiệp vừa và nhỏ, hỗ trợ vận hành kho, theo dõi tồn kho và phân quyền truy cập.",
+        achievements: [
+          "Thiết kế và phát triển giao diện web responsive bằng Thymeleaf, Bootstrap và HTML/CSS, tập trung vào trải nghiệm người dùng và luồng quản lý kho.",
+          "Triển khai các module Đơn nhập hàng (Import Order) và Đơn xuất hàng (Export Order), bao gồm tạo giao dịch, xác thực số lượng tồn kho, cập nhật tồn kho và quản lý trạng thái đơn hàng.",
+          "Áp dụng Observer Design Pattern để tự động xử lý các sự kiện kho hàng như cập nhật biến động kho và thông báo sắp hết hàng, nâng cao tính bảo trì của hệ thống.",
+        ],
+      },
       {
         title: "EduLMS – Learning Management System",
         projectType: "Cá nhân",
@@ -442,9 +498,9 @@ export const cvContent: Record<Language, LanguageContent> = {
         description:
           "Thiết kế giao diện LMS đa vai trò cho Admin, Teacher và Student với màn hình theo quyền và luồng làm việc kết nối API.",
         achievements: [
-          "Thiết kế dashboard, quản lý khóa học, lesson viewer và assignment cho 3 vai trò riêng.",
-          "Triển khai render theo vai trò bằng JWT, quản lý state bằng Context API và tích hợp Axios.",
-          "Xây dựng các tính năng tương tác như quiz, nộp bài, comments và notifications.",
+          "Thiết kế giao diện đa vai trò (Admin / Teacher / Student): dashboard, course management, lesson viewer, assignments.",
+          "Triển khai JWT-based role rendering, Context API state management, và Axios API integration.",
+          "Xây dựng các tính năng tương tác: quiz interface, assignment submission, comments, và notifications.",
         ],
       },
       {
@@ -466,9 +522,8 @@ export const cvContent: Record<Language, LanguageContent> = {
         description:
           "Xây dựng luồng thương mại điện tử đầy đủ với tìm kiếm sản phẩm, giỏ hàng, thanh toán và theo dõi đơn hàng.",
         achievements: [
-          "Triển khai quản lý state bằng Context API cho giỏ hàng và phiên người dùng.",
-          "Tích hợp Stripe cho thanh toán và Cloudinary cho upload media.",
-          "Hoàn thiện giao diện danh sách sản phẩm, checkout và theo dõi đơn hàng theo responsive UI.",
+          "Xây dựng quy trình thương mại điện tử hoàn chỉnh: danh sách sản phẩm, giỏ hàng, checkout, thanh toán trực tuyến (Stripe) và theo dõi đơn hàng.",
+          "Triển khai quản lý state bằng Context API cho giỏ hàng và phiên làm việc; tích hợp Cloudinary để tải lên tệp truyền thông.",
         ],
       },
       {
@@ -487,29 +542,9 @@ export const cvContent: Record<Language, LanguageContent> = {
         description:
           "Thiết kế và phát triển giao diện e-commerce đa vai trò cho Guest, User, Vendor, Admin và Shipper.",
         achievements: [
-          "Thiết kế wireframe và user journey cho hệ thống nhiều vai trò.",
-          "Xây dựng component JSP/JSTL tái sử dụng với Sitemesh để giữ layout thống nhất.",
-          "Hoàn thiện UI đăng nhập, đăng ký, OTP, Google login và dashboard quản trị cho user, product, order.",
-        ],
-      },
-      {
-        title: "Grocery Mart – E-commerce UI",
-        projectType: "Cá nhân",
-        duration: "07/2024 – 08/2024",
-        github: "https://github.com/minhchuong32/grocery_mart",
-        techStack: [
-          "HTML5",
-          "SCSS (7-1 pattern)",
-          "Vanilla JavaScript",
-          "Fetch API",
-          "LocalStorage",
-        ],
-        description:
-          "Xây dựng giao diện e-commerce mobile-first với load template, lưu trạng thái và hỗ trợ dark/light mode.",
-        achievements: [
-          "Tạo giao diện product listing, cart, checkout và profile theo hướng mobile-first responsive.",
-          "Triển khai dark/light mode bằng CSS variables và lưu trạng thái bằng localStorage.",
-          "Thêm cơ chế load template động bằng Fetch API kèm caching localStorage.",
+          "Thiết kế kiến trúc frontend và cấu trúc UI tái sử dụng.",
+          "Phát triển giao diện xác thực, phân quyền và giao diện Admin bằng JSP, JSTL và Bootstrap.",
+          "Đóng góp xây dựng API backend và logic nghiệp vụ cho Admin.",
         ],
       },
     ],
@@ -526,30 +561,30 @@ export const cvContent: Record<Language, LanguageContent> = {
       gpa: "3.2 / 4.0",
       location: "Ho Chi Minh City",
       summary:
-        "Các học phần liên quan gồm Cấu trúc dữ liệu & Giải thuật, Phát triển web, Quản lý cơ sở dữ liệu, Mạng máy tính và Kỹ nghệ phần mềm.",
+        "Môn học liên quan: Cấu trúc dữ liệu & Giải thuật, Phát triển web, Quản lý cơ sở dữ liệu, Mạng máy tính, Kỹ nghệ phần mềm.",
       courses: [
-        "Cấu trúc dữ liệu & Giải thuật",
-        "Phát triển web",
-        "Quản lý cơ sở dữ liệu",
-        "Mạng máy tính",
-        "Kỹ nghệ phần mềm",
+        "Data Structures & Algorithms",
+        "Web Development",
+        "Database Management",
+        "Computer Networks",
+        "Software Engineering",
       ],
     },
     contactSection: {
       eyebrow: "Liên hệ",
       title: "Kết nối với mình",
       subtitle:
-        "Mình đang tìm cơ hội thực tập và fresher frontend. Thông tin liên hệ ở bên dưới.",
+        "Mình đang tìm cơ hội thực tập và fresher Frontend Developer (ReactJS). Thông tin liên hệ ở bên dưới.",
     },
     contact: {
       title: "Liên hệ nhanh",
       subtitle: "Cách nhanh nhất để gặp mình",
       overview:
         "Mình sẵn sàng tham gia các dự án frontend cần UI sạch, luồng tương tác mượt và tích hợp API ổn định.",
-      profileSummary: "Lập trình viên Frontend · Thực tập sinh / Fresher",
+      profileSummary: "Frontend Developer (ReactJS) · Intern / Fresher",
       points: [
-        "Ưu tiên frontend với React, TailwindCSS, Context API, Axios và JWT",
-        "Đã có kinh nghiệm với LMS, e-commerce và giao diện mobile-first",
+        "Ưu tiên frontend với ReactJS, Vite, Redux Toolkit, Context API, Axios và JWT",
+        "Kinh nghiệm qua các dự án FlashLearn (Học tiếng Anh), Inventory (Quản lý kho), LMS và E-commerce",
         "Làm việc tại TP. Hồ Chí Minh cho vị trí thực tập hoặc fresher",
       ],
     },

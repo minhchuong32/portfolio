@@ -1,6 +1,6 @@
 import SectionTitle from "../ui/SectionTitle";
 import SkillBadge from "../ui/SkillBadge";
-import { Blocks, Code2, Database, Lightbulb, Wrench } from "lucide-react";
+import { Blocks, Code2, Database, Layout, Lightbulb, Server, Wrench } from "lucide-react";
 import { getCvContent, type Language } from "../../data/cv";
 
 type SkillsProps = {
@@ -10,8 +10,9 @@ type SkillsProps = {
 const iconMap = {
   core: Code2,
   frameworks: Blocks,
+  uiux: Layout,
   state: Database,
-  backend: Database,
+  backend: Server,
   tools: Wrench,
   concepts: Lightbulb,
 };
@@ -19,6 +20,7 @@ const iconMap = {
 const cardTone = {
   core: "from-sky-50 to-white border-sky-100",
   frameworks: "from-indigo-50 to-white border-indigo-100",
+  uiux: "from-purple-50 to-white border-purple-100",
   state: "from-cyan-50 to-white border-cyan-100",
   backend: "from-emerald-50 to-white border-emerald-100",
   tools: "from-amber-50 to-white border-amber-100",
@@ -68,9 +70,11 @@ export default function Skills({ language }: SkillsProps) {
                           ? "backend"
                           : category.key === "tools"
                             ? "tools"
-                            : category.key === "concepts"
-                              ? "concepts"
-                              : "frontend"
+                            : category.key === "uiux"
+                              ? "uiux"
+                              : category.key === "concepts"
+                                ? "concepts"
+                                : "frontend"
                       }
                     />
                   ))}
