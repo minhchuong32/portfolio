@@ -8,22 +8,30 @@ type SkillsProps = {
 };
 
 const iconMap = {
+  programming: Code2,
+  frontend: Blocks,
+  backend: Server,
+  database: Database,
+  engineering: Lightbulb,
+  tools: Wrench,
   core: Code2,
   frameworks: Blocks,
   uiux: Layout,
   state: Database,
-  backend: Server,
-  tools: Wrench,
   concepts: Lightbulb,
 };
 
 const cardTone = {
+  programming: "from-sky-50 to-white border-sky-100",
+  frontend: "from-indigo-50 to-white border-indigo-100",
+  backend: "from-emerald-50 to-white border-emerald-100",
+  database: "from-cyan-50 to-white border-cyan-100",
+  engineering: "from-purple-50 to-white border-purple-100",
+  tools: "from-amber-50 to-white border-amber-100",
   core: "from-sky-50 to-white border-sky-100",
   frameworks: "from-indigo-50 to-white border-indigo-100",
   uiux: "from-purple-50 to-white border-purple-100",
   state: "from-cyan-50 to-white border-cyan-100",
-  backend: "from-emerald-50 to-white border-emerald-100",
-  tools: "from-amber-50 to-white border-amber-100",
   concepts: "from-slate-50 to-white border-slate-200",
 };
 
@@ -40,12 +48,15 @@ export default function Skills({ language }: SkillsProps) {
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {content.skills.map((category) => {
-            const Icon = iconMap[category.key as keyof typeof iconMap];
+            const Icon = iconMap[category.key as keyof typeof iconMap] || Code2;
 
             return (
               <div
                 key={category.title}
-                className={`rounded-[1.75rem] border bg-gradient-to-br ${cardTone[category.key as keyof typeof cardTone]} p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.08)]`}
+                className={`rounded-[1.75rem] border bg-gradient-to-br ${
+                  cardTone[category.key as keyof typeof cardTone] ||
+                  cardTone.programming
+                } p-6 shadow-[0_18px_50px_rgba(15,23,42,0.05)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(15,23,42,0.08)]`}
               >
                 <div className="mb-5 flex items-center gap-3">
                   <div className="rounded-2xl bg-white p-3 shadow-sm">
@@ -65,17 +76,7 @@ export default function Skills({ language }: SkillsProps) {
                     <SkillBadge
                       key={skill}
                       skill={skill}
-                      category={
-                        category.key === "backend"
-                          ? "backend"
-                          : category.key === "tools"
-                            ? "tools"
-                            : category.key === "uiux"
-                              ? "uiux"
-                              : category.key === "concepts"
-                                ? "concepts"
-                                : "frontend"
-                      }
+                      category={category.key as any}
                     />
                   ))}
                 </div>
