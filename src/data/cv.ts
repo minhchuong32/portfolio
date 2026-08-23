@@ -79,17 +79,17 @@ type LanguageContent = {
   skillsSection: SectionTitleCopy;
   skills: Array<{
     key:
-    | "programming"
-    | "frontend"
-    | "backend"
-    | "database"
-    | "engineering"
-    | "tools"
-    | "core"
-    | "frameworks"
-    | "uiux"
-    | "state"
-    | "concepts";
+      | "programming"
+      | "frontend"
+      | "backend"
+      | "database"
+      | "engineering"
+      | "tools"
+      | "core"
+      | "frameworks"
+      | "uiux"
+      | "state"
+      | "concepts";
     title: string;
     description: string;
     skills: string[];
@@ -114,8 +114,8 @@ export const cvContent: Record<Language, LanguageContent> = {
     hero: {
       badge: "CV Portfolio 2026",
       name: "PHAM HAN MINH CHUONG",
-      role: "Software Engineer",
-      level: "Intern / Fresher",
+      role: "Frontend Developer Intern",
+      level: "Intern",
       email: "chuongminh3225@gmail.com",
       phone: "+84 977 692 690",
       location: "Ho Chi Minh City",
@@ -125,29 +125,29 @@ export const cvContent: Record<Language, LanguageContent> = {
       youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
-        "Software Engineer with a solid foundation in JavaScript, TypeScript, ReactJS, Node.js, Java, and Spring Boot. Skilled in developing responsive web applications, designing RESTful APIs, managing state, and implementing role-based access control.",
+        "Frontend Developer Intern based in Ho Chi Minh City with strong expertise in building responsive, user-friendly web applications using React.js, Vite, Redux Toolkit, Tailwind CSS, and RESTful APIs with Node.js & Express.",
       highlights: [
-        "Software Engineer",
-        "ReactJS",
-        "Node.js",
-        "Spring Boot",
-        "Java",
-        "TypeScript",
+        "Frontend Developer Intern",
+        "React.js",
+        "Vite",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Node.js & Express",
         "RESTful API",
-        "Docker",
+        "JavaScript (ES6+)",
       ],
       stats: [
-        { label: "Featured Projects", value: "4" },
+        { label: "Featured Projects", value: "2" },
         { label: "Education", value: "HCMUTE" },
-        { label: "Role", value: "Software Engineer" },
+        { label: "Role", value: "Frontend Intern" },
       ],
-      targetRole: "Software Engineer",
+      targetRole: "Frontend Developer Intern",
       targetRoleLabel: "Target Role",
-      focus: "Full-Stack Web Development",
+      focus: "React & Modern Frontend",
       focusLabel: "Focus",
-      primaryStack: "ReactJS, Node.js, Spring Boot, SQL/MongoDB",
+      primaryStack: "React.js, Vite, Redux Toolkit, Tailwind CSS, Node.js, Express, MongoDB",
       primaryStackLabel: "Primary Stack",
-      experience: "FlashLearn, Inventory, ClothesShop, UTEShop",
+      experience: "FlashLearn, ClothesShop",
       experienceLabel: "Experience",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
@@ -156,35 +156,27 @@ export const cvContent: Record<Language, LanguageContent> = {
     },
     skillsSection: {
       eyebrow: "Technical Skills",
-      title: "What I work with",
+      title: "Languages, Frontend & Backend Stack",
       subtitle:
-        "A versatile software engineering stack covering core languages, modern frontend, backend services, databases, engineering practices, and tools.",
+        "Technical skills covering core programming languages, modern frontend frameworks, backend API engineering, databases, and development tools.",
     },
     skills: [
       {
         key: "programming",
-        title: "Programming",
-        description: "Core programming and markup languages.",
-        skills: [
-          "JavaScript (ES6+)",
-          "TypeScript (Basic)",
-          "Java",
-          "HTML5",
-          "CSS3",
-        ],
+        title: "Languages",
+        description: "Core web development programming and markup languages.",
+        skills: ["JavaScript (ES6+)", "HTML5", "CSS3"],
       },
       {
         key: "frontend",
         title: "Frontend",
-        description: "Modern web frameworks, UI libraries, and styling.",
+        description: "Modern web frameworks, UI libraries, state management, and styling.",
         skills: [
-          "ReactJS",
+          "React.js",
           "Vite",
           "React Router",
           "Redux Toolkit",
-          "Context API",
           "Tailwind CSS",
-          "Bootstrap",
         ],
       },
       {
@@ -194,7 +186,6 @@ export const cvContent: Record<Language, LanguageContent> = {
         skills: [
           "Node.js",
           "Express.js",
-          "Java Servlet",
           "RESTful API",
           "JWT Authentication & Authorization",
         ],
@@ -202,36 +193,28 @@ export const cvContent: Record<Language, LanguageContent> = {
       {
         key: "database",
         title: "Database",
-        description: "Relational, NoSQL databases, and ORM specifications.",
-        skills: ["MongoDB", "SQL Server", "PostgreSQL", "JPA"],
-      },
-      {
-        key: "engineering",
-        title: "Software Engineering",
-        description:
-          "Design patterns, architecture, state flow, and security.",
-        skills: [
-          "MVC",
-          "RBAC",
-          "REST API Integration",
-          "State Management",
-          "Design Patterns",
-          "Responsive Design",
-        ],
+        description: "NoSQL databases and Object Data Modeling (ODM).",
+        skills: ["MongoDB", "Mongoose"],
       },
       {
         key: "tools",
-        title: "Tools",
+        title: "Tools & Services",
         description:
-          "Daily workflow for version control, containerization, API testing, and UI prototyping.",
-        skills: ["Git/GitHub", "Postman", "Docker", "Figma"],
+          "Daily workflow for version control, containerization, API testing, HTTP clients, and cloud media management.",
+        skills: [
+          "Git/GitHub",
+          "Docker",
+          "Postman",
+          "Axios",
+          "Cloudinary",
+        ],
       },
     ],
     projectsSection: {
       eyebrow: "Projects",
-      title: "Selected work",
+      title: "Featured Projects",
       subtitle:
-        "Key projects demonstrating full-stack engineering, team collaboration, and problem-solving skills.",
+        "Key projects demonstrating full-stack development, frontend architecture, state management, and API integration.",
     },
     projects: [
       {
@@ -250,36 +233,15 @@ export const cvContent: Record<Language, LanguageContent> = {
           "MongoDB",
         ],
         description:
-          "A web-based English learning platform that helps users learn vocabulary through flashcards, quizzes, and personalized learning progress.",
+          "A full-stack English learning platform that helps users improve vocabulary through flashcards, quizzes, and personalized learning progress.",
         achievements: [
-          "Designed UI/UX prototypes in Figma and developed responsive React interfaces using reusable components.",
-          "Structured frontend state management with Redux Toolkit and integrated RESTful APIs using Axios.",
+          "Developed responsive and reusable React components using React and Tailwind CSS.",
+          "Implemented global state management using Redux Toolkit.",
+          "Built and integrated RESTful APIs between the React frontend and Node.js/Express.js backend.",
           "Implemented interactive learning features including flashcards, quizzes, and learning progress tracking.",
-          "Integrated and contributed to the VNPay payment API for online payment functionality.",
+          "Integrated VNPay payment API for online payment functionality.",
+          "Used MongoDB for storing user, learning, and application data.",
           "Collaborated with team members using Git/GitHub throughout the development process.",
-        ],
-      },
-      {
-        title: "Inventory – Management System",
-        projectType: "Team · 4 members",
-        duration: "03/2026 – 04/2026",
-        github: "https://github.com/minhchuong32/inventory-system",
-        techStack: [
-          "Spring Boot",
-          "Spring Security",
-          "Spring Data JPA",
-          "Thymeleaf",
-          "PostgreSQL (SQL Server)",
-          "Docker",
-        ],
-        description:
-          "A web-based inventory management system for small and medium-sized businesses, supporting warehouse operations, inventory tracking, and role-based access control.",
-        achievements: [
-          "Developed responsive web interfaces using Thymeleaf, Bootstrap, HTML, and CSS for inventory management workflows.",
-          "Implemented Import Order and Export Order modules, including transaction creation, inventory validation, stock updates, and order status management.",
-          "Applied the Observer Design Pattern to handle inventory-related events such as stock movement updates and low-stock notifications.",
-          "Worked with Spring Data JPA and SQL Server to manage inventory and transaction data.",
-          "Applied Spring Security for authentication and role-based authorization.",
         ],
       },
       {
@@ -299,44 +261,23 @@ export const cvContent: Record<Language, LanguageContent> = {
           "Cloudinary",
         ],
         description:
-          "Full-stack e-commerce web application featuring product discovery, shopping cart, online payment, and order tracking.",
+          "A full-stack e-commerce application supporting product browsing, shopping cart, checkout, online payment, and order tracking.",
         achievements: [
           "Developed the complete e-commerce workflow including product listing, shopping cart, checkout, payment, and order tracking.",
-          "Built RESTful API integration between React frontend and Node.js/Express backend.",
-          "Implemented authentication and user session management using JWT.",
+          "Built RESTful APIs using Node.js and Express.js and integrated them with the React frontend.",
+          "Implemented JWT-based authentication and authorization.",
           "Used Context API for global cart and authentication state management.",
-          "Integrated Cloudinary for product image storage.",
-        ],
-      },
-      {
-        title: "UTEShop – E-commerce Web Application",
-        projectType: "Team · 3 members",
-        duration: "08/2025 – 10/2025",
-        github: "https://github.com/minhchuong32/uteshop-E-commerce-website",
-        techStack: [
-          "Java Servlet",
-          "JSP",
-          "JPA",
-          "SQL Server",
-          "JWT",
-          "Bootstrap",
-        ],
-        description:
-          "A full-stack e-commerce platform supporting multiple roles (Guest, User, Vendor, Admin, Shipper) with online payments and order management.",
-        achievements: [
-          "Designed frontend architecture and developed reusable UI components using JSP, JSTL, and Bootstrap.",
-          "Implemented authentication, authorization, and role-based Admin interfaces.",
-          "Contributed to backend APIs and business logic for Admin functionality.",
-          "Worked with JPA and SQL Server for data persistence and business operations.",
-          "Collaborated with team members to develop and integrate application features.",
+          "Integrated Stripe for online payment processing.",
+          "Integrated Cloudinary for product image storage and management.",
+          "Designed responsive user interfaces using React, Tailwind CSS, and reusable components.",
         ],
       },
     ],
     educationSection: {
       eyebrow: "Education",
-      title: "Academic background",
+      title: "Academic Background",
       subtitle:
-        "Degree, coursework, and university environment shaping my software engineering foundation.",
+        "University degree, coursework, and environment shaping my software engineering foundation.",
     },
     education: {
       school: "HCMC University of Technology and Engineering (HCMUTE)",
@@ -356,20 +297,20 @@ export const cvContent: Record<Language, LanguageContent> = {
     },
     contactSection: {
       eyebrow: "Contact",
-      title: "Let's connect",
+      title: "Get in Touch",
       subtitle:
-        "Open to Software Engineer Intern or Fresher opportunities. Feel free to reach out.",
+        "Open to Frontend Developer Intern opportunities. Feel free to reach out.",
     },
     contact: {
-      title: "Quick contact",
+      title: "Quick Contact",
       subtitle: "Fastest ways to reach me",
       overview:
-        "I am open to Software Engineer opportunities where I can contribute to web application development, RESTful API integration, and clean code solutions.",
-      profileSummary: "Software Engineer · Intern / Fresher",
+        "I am actively seeking Frontend Developer Intern opportunities where I can apply my skills in React.js, modern web design, Redux Toolkit, and RESTful API integration.",
+      profileSummary: "Frontend Developer Intern",
       points: [
-        "Proficient in JavaScript, TypeScript, ReactJS, Node.js, Spring Boot, Java, SQL, MongoDB, and Docker",
-        "Hands-on experience across FlashLearn, Inventory System, ClothesShop, and UTEShop",
-        "Available in Ho Chi Minh City for Software Engineer intern or fresher roles",
+        "Proficient in JavaScript (ES6+), React.js, Vite, Redux Toolkit, Tailwind CSS, and RESTful APIs",
+        "Hands-on experience developing full-stack web applications (FlashLearn & ClothesShop)",
+        "Based in Ho Chi Minh City, ready for Frontend Developer Intern positions",
       ],
     },
   },
@@ -384,8 +325,8 @@ export const cvContent: Record<Language, LanguageContent> = {
     hero: {
       badge: "Hồ sơ CV 2026",
       name: "PHAM HAN MINH CHUONG",
-      role: "Software Engineer",
-      level: "Intern / Fresher",
+      role: "Frontend Developer Intern",
+      level: "Intern",
       email: "chuongminh3225@gmail.com",
       phone: "+84 977 692 690",
       location: "Ho Chi Minh City",
@@ -395,29 +336,29 @@ export const cvContent: Record<Language, LanguageContent> = {
       youtube: "https://www.youtube.com/@chuwongpahm",
       portrait: pmcPortrait,
       summary:
-        "Kỹ sư phần mềm với nền tảng vững chắc về JavaScript, TypeScript, ReactJS, Node.js, Java và Spring Boot. Có kinh nghiệm phát triển ứng dụng web responsive, thiết kế RESTful API, quản lý state và phân quyền người dùng dựa trên vai trò (RBAC).",
+        "Thực tập sinh Lập trình viên Frontend tại TP. Hồ Chí Minh với nền tảng vững chắc về phát triển ứng dụng web responsive, tối ưu giao diện bằng React.js, Vite, Redux Toolkit, Tailwind CSS và tích hợp RESTful API với Node.js & Express.",
       highlights: [
-        "Software Engineer",
-        "ReactJS",
-        "Node.js",
-        "Spring Boot",
-        "Java",
-        "TypeScript",
+        "Frontend Developer Intern",
+        "React.js",
+        "Vite",
+        "Redux Toolkit",
+        "Tailwind CSS",
+        "Node.js & Express",
         "RESTful API",
-        "Docker",
+        "JavaScript (ES6+)",
       ],
       stats: [
-        { label: "Dự án nổi bật", value: "4" },
+        { label: "Dự án nổi bật", value: "2" },
         { label: "Học vấn", value: "HCMUTE" },
-        { label: "Định hướng", value: "Software Engineer" },
+        { label: "Định hướng", value: "Frontend Intern" },
       ],
-      targetRole: "Software Engineer",
+      targetRole: "Frontend Developer Intern",
       targetRoleLabel: "Vai trò mục tiêu",
-      focus: "Phát triển Web Full-Stack & API",
+      focus: "React & Frontend Hiện đại",
       focusLabel: "Tập trung",
-      primaryStack: "ReactJS, Node.js, Spring Boot, SQL/MongoDB",
+      primaryStack: "React.js, Vite, Redux Toolkit, Tailwind CSS, Node.js, Express, MongoDB",
       primaryStackLabel: "Stack chính",
-      experience: "FlashLearn, Inventory, ClothesShop, UTEShop",
+      experience: "FlashLearn, ClothesShop",
       experienceLabel: "Kinh nghiệm",
       viewProjects: "Xem dự án",
       contactMe: "Liên hệ",
@@ -428,43 +369,34 @@ export const cvContent: Record<Language, LanguageContent> = {
       eyebrow: "Kỹ năng kỹ thuật",
       title: "Bộ kỹ năng chuyên môn",
       subtitle:
-        "Bộ kỹ năng kỹ nghệ phần mềm bao quát ngôn ngữ lập trình, frontend, backend, cơ sở dữ liệu, mô hình thiết kế và công cụ phát triển.",
+        "Bộ kỹ năng kỹ thuật bao quát ngôn ngữ lập trình, framework frontend hiện đại, backend API, cơ sở dữ liệu và công cụ phát triển.",
     },
     skills: [
       {
         key: "programming",
         title: "Ngôn ngữ lập trình",
-        description: "Các ngôn ngữ lập trình và đánh dấu cốt lõi.",
-        skills: [
-          "JavaScript (ES6+)",
-          "TypeScript (Basic)",
-          "Java",
-          "HTML5",
-          "CSS3",
-        ],
+        description: "Các ngôn ngữ lập trình và đánh dấu web cốt lõi.",
+        skills: ["JavaScript (ES6+)", "HTML5", "CSS3"],
       },
       {
         key: "frontend",
         title: "Frontend",
-        description: "Framework, thư viện frontend hiện đại và styling.",
+        description: "Framework, thư viện frontend hiện đại, quản lý state và styling.",
         skills: [
-          "ReactJS",
+          "React.js",
           "Vite",
           "React Router",
           "Redux Toolkit",
-          "Context API",
           "Tailwind CSS",
-          "Bootstrap",
         ],
       },
       {
         key: "backend",
         title: "Backend",
-        description: "Công nghệ server-side, thiết kế API và phân quyền xác thực.",
+        description: "Công nghệ server-side, thiết kế API và xác thực phân quyền.",
         skills: [
           "Node.js",
           "Express.js",
-          "Java Servlet",
           "RESTful API",
           "JWT Authentication & Authorization",
         ],
@@ -472,36 +404,28 @@ export const cvContent: Record<Language, LanguageContent> = {
       {
         key: "database",
         title: "Cơ sở dữ liệu",
-        description: "Cơ sở dữ liệu quan hệ, NoSQL và ORM.",
-        skills: ["MongoDB", "SQL Server", "PostgreSQL", "JPA"],
-      },
-      {
-        key: "engineering",
-        title: "Kỹ nghệ phần mềm",
-        description:
-          "Mô hình kiến trúc, quy chuẩn thiết kế, quản lý state và bảo mật.",
-        skills: [
-          "MVC",
-          "RBAC",
-          "REST API Integration",
-          "State Management",
-          "Design Patterns",
-          "Responsive Design",
-        ],
+        description: "Cơ sở dữ liệu NoSQL và mô hình hóa dữ liệu (ODM).",
+        skills: ["MongoDB", "Mongoose"],
       },
       {
         key: "tools",
         title: "Công cụ phát triển",
         description:
-          "Công cụ hằng ngày cho quản lý phiên bản, container, kiểm thử API và thiết kế UI.",
-        skills: ["Git/GitHub", "Postman", "Docker", "Figma"],
+          "Công cụ quản lý phiên bản, container, kiểm thử API, HTTP client và lưu trữ hình ảnh.",
+        skills: [
+          "Git/GitHub",
+          "Docker",
+          "Postman",
+          "Axios",
+          "Cloudinary",
+        ],
       },
     ],
     projectsSection: {
       eyebrow: "Dự án",
       title: "Các dự án tiêu biểu",
       subtitle:
-        "Những dự án dưới đây phản ánh đúng kinh nghiệm và công nghệ từ CV mới nhất.",
+        "Những dự án dưới đây phản ánh chính xác kinh nghiệm và công nghệ từ CV mới nhất.",
     },
     projects: [
       {
@@ -520,36 +444,15 @@ export const cvContent: Record<Language, LanguageContent> = {
           "MongoDB",
         ],
         description:
-          "Nền tảng học tiếng Anh trực tuyến hỗ trợ người dùng học từ vựng qua flashcard, bài kiểm tra và tiến trình học tập cá nhân hóa.",
+          "Nền tảng học tiếng Anh trực tuyến full-stack giúp người dùng cải thiện từ vựng qua flashcard, bài kiểm tra và tiến trình học tập cá nhân hóa.",
         achievements: [
-          "Thiết kế prototype UI/UX trên Figma và phát triển giao diện React responsive bằng các component tái sử dụng.",
-          "Cấu trúc quản lý state frontend với Redux Toolkit và tích hợp RESTful API bằng Axios.",
-          "Triển khai các tính năng học tập tương tác bao gồm flashcard, bài kiểm tra (quizzes) và theo dõi tiến trình học tập.",
-          "Tích hợp và đóng góp phát triển API thanh toán VNPay phục vụ tính năng thanh toán trực tuyến.",
+          "Phát triển giao diện React responsive và component tái sử dụng bằng React và Tailwind CSS.",
+          "Triển khai quản lý state toàn cục bằng Redux Toolkit.",
+          "Xây dựng và tích hợp RESTful API giữa frontend React và backend Node.js/Express.js.",
+          "Phát triển các tính năng học tập tương tác bao gồm flashcard, bài kiểm tra (quizzes) và theo dõi tiến trình học tập.",
+          "Tích hợp cổng thanh toán VNPay phục vụ tính năng thanh toán trực tuyến.",
+          "Sử dụng MongoDB để lưu trữ dữ liệu người dùng, tiến trình học tập và ứng dụng.",
           "Phối hợp làm việc nhóm hiệu quả bằng Git/GitHub trong suốt quá trình phát triển dự án.",
-        ],
-      },
-      {
-        title: "Inventory – Management System",
-        projectType: "Nhóm · 4 thành viên",
-        duration: "03/2026 – 04/2026",
-        github: "https://github.com/minhchuong32/inventory-system",
-        techStack: [
-          "Spring Boot",
-          "Spring Security",
-          "Spring Data JPA",
-          "Thymeleaf",
-          "PostgreSQL (SQL Server)",
-          "Docker",
-        ],
-        description:
-          "Hệ thống quản lý kho hàng trực tuyến cho doanh nghiệp vừa và nhỏ, hỗ trợ vận hành kho, theo dõi tồn kho và phân quyền truy cập (RBAC).",
-        achievements: [
-          "Phát triển giao diện web responsive bằng Thymeleaf, Bootstrap, HTML và CSS cho các luồng quy trình quản lý kho.",
-          "Triển khai module Đơn nhập hàng (Import Order) và Đơn xuất hàng (Export Order), bao gồm tạo giao dịch, xác thực tồn kho, cập nhật số lượng tồn kho và quản lý trạng thái đơn hàng.",
-          "Áp dụng Observer Design Pattern để tự động xử lý các sự kiện kho hàng như cập nhật biến động kho và phát thông báo sắp hết hàng.",
-          "Làm việc với Spring Data JPA và SQL Server để quản lý dữ liệu tồn kho và lịch sử giao dịch.",
-          "Áp dụng Spring Security cho xác thực người dùng và phân quyền dựa trên vai trò (RBAC).",
         ],
       },
       {
@@ -569,36 +472,15 @@ export const cvContent: Record<Language, LanguageContent> = {
           "Cloudinary",
         ],
         description:
-          "Ứng dụng web thương mại điện tử full-stack hỗ trợ tìm kiếm sản phẩm, giỏ hàng, thanh toán trực tuyến và theo dõi đơn hàng.",
+          "Ứng dụng thương mại điện tử full-stack hỗ trợ duyệt sản phẩm, giỏ hàng, checkout, thanh toán trực tuyến và theo dõi đơn hàng.",
         achievements: [
-          "Phát triển hoàn chỉnh quy trình thương mại điện tử bao gồm danh mục sản phẩm, giỏ hàng, checkout, thanh toán trực tuyến (Stripe) và theo dõi đơn hàng.",
-          "Xây dựng và tích hợp RESTful API giữa frontend React và backend Node.js/Express.",
-          "Triển khai tính năng xác thực và quản lý phiên làm việc của người dùng bằng JWT.",
+          "Phát triển hoàn chỉnh quy trình thương mại điện tử bao gồm danh mục sản phẩm, giỏ hàng, checkout, thanh toán (Stripe) và theo dõi đơn hàng.",
+          "Xây dựng RESTful API bằng Node.js và Express.js và tích hợp với frontend React.",
+          "Triển khai tính năng xác thực và phân quyền người dùng dựa trên JWT.",
           "Sử dụng Context API để quản lý state toàn cục cho giỏ hàng và trạng thái xác thực.",
-          "Tích hợp Cloudinary phục vụ lưu trữ và quản lý hình ảnh sản phẩm.",
-        ],
-      },
-      {
-        title: "UTEShop – E-commerce Web Application",
-        projectType: "Nhóm · 3 thành viên",
-        duration: "08/2025 – 10/2025",
-        github: "https://github.com/minhchuong32/uteshop-E-commerce-website",
-        techStack: [
-          "Java Servlet",
-          "JSP",
-          "JPA",
-          "SQL Server",
-          "JWT",
-          "Bootstrap",
-        ],
-        description:
-          "Nền tảng thương mại điện tử full-stack hỗ trợ đa vai trò (Guest, User, Vendor, Admin, Shipper) với thanh toán trực tuyến và quản lý đơn hàng.",
-        achievements: [
-          "Thiết kế kiến trúc frontend và phát triển các component UI tái sử dụng bằng JSP, JSTL và Bootstrap.",
-          "Triển khai hệ thống xác thực, phân quyền và các giao diện quản trị Admin theo vai trò.",
-          "Đóng góp xây dựng API backend và logic nghiệp vụ cho các tính năng Admin.",
-          "Sử dụng JPA và SQL Server cho lưu trữ dữ liệu và xử lý các thao tác nghiệp vụ.",
-          "Phối hợp cùng các thành viên trong nhóm để xây dựng và tích hợp tính năng ứng dụng.",
+          "Tích hợp Stripe phục vụ xử lý thanh toán trực tuyến.",
+          "Tích hợp Cloudinary phục vụ quản lý và lưu trữ hình ảnh sản phẩm.",
+          "Thiết kế giao diện người dùng responsive bằng React, Tailwind CSS và các component tái sử dụng.",
         ],
       },
     ],
@@ -615,7 +497,7 @@ export const cvContent: Record<Language, LanguageContent> = {
       gpa: "3.2 / 4.0",
       location: "Ho Chi Minh City",
       summary:
-        "Môn học liên quan: Cấu trúc dữ liệu & Giải thuật, Phát triển web, Quản lý cơ sở dữ liệu, Mạng máy tính, Kỹ nghệ phần mềm.",
+        "Các môn học liên quan: Cấu trúc dữ liệu & Giải thuật, Phát triển Web, Quản lý Cơ sở dữ liệu, Mạng máy tính, Kỹ nghệ phần mềm.",
       courses: [
         "Data Structures & Algorithms",
         "Web Development",
@@ -628,18 +510,18 @@ export const cvContent: Record<Language, LanguageContent> = {
       eyebrow: "Liên hệ",
       title: "Kết nối với mình",
       subtitle:
-        "Mình đang tìm cơ hội thực tập và fresher Software Engineer. Thông tin liên hệ ở bên dưới.",
+        "Mình đang tìm vị trí Thực tập sinh Lập trình viên Frontend. Thông tin liên hệ ở bên dưới.",
     },
     contact: {
       title: "Liên hệ nhanh",
       subtitle: "Cách nhanh nhất để gặp mình",
       overview:
-        "Mình sẵn sàng tham gia các dự án phát triển phần mềm, ứng dụng web full-stack, tích hợp RESTful API và thiết kế hệ thống.",
-      profileSummary: "Software Engineer · Intern / Fresher",
+        "Mình đang chủ động tìm kiếm các cơ hội Thực tập sinh Lập trình viên Frontend để ứng dụng kỹ năng về React.js, thiết kế web hiện đại, Redux Toolkit và tích hợp RESTful API.",
+      profileSummary: "Frontend Developer Intern",
       points: [
-        "Thành thạo JavaScript, TypeScript, ReactJS, Node.js, Spring Boot, Java, SQL, MongoDB và Docker",
-        "Kinh nghiệm thực chiến qua các dự án FlashLearn, Hệ thống quản lý kho, ClothesShop và UTEShop",
-        "Sống tại TP. Hồ Chí Minh, sẵn sàng nhận vị trí thực tập hoặc fresher Software Engineer",
+        "Thành thạo JavaScript (ES6+), React.js, Vite, Redux Toolkit, Tailwind CSS và RESTful API",
+        "Kinh nghiệm thực chiến phát triển các ứng dụng web full-stack (FlashLearn, ClothesShop)",
+        "Đang sinh sống tại TP. Hồ Chí Minh, sẵn sàng nhận vị trí Thực tập sinh Frontend",
       ],
     },
   },
