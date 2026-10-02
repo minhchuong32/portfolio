@@ -79,17 +79,17 @@ type LanguageContent = {
   skillsSection: SectionTitleCopy;
   skills: Array<{
     key:
-      | "programming"
-      | "frontend"
-      | "backend"
-      | "database"
-      | "engineering"
-      | "tools"
-      | "uiux"
-      | "core"
-      | "frameworks"
-      | "state"
-      | "concepts";
+    | "programming"
+    | "frontend"
+    | "backend"
+    | "database"
+    | "engineering"
+    | "tools"
+    | "uiux"
+    | "core"
+    | "frameworks"
+    | "state"
+    | "concepts";
     title: string;
     description: string;
     skills: string[];
@@ -626,7 +626,7 @@ export const cvContent: Record<Language, LanguageContent> = {
 export const heroProfile = cvContent.en.hero;
 export const navigationItems = cvContent.en.navigationItems;
 export const cvUrl =
-  "https://drive.google.com/file/d/1PZEVQvKvSHFEhu8Efo2dT7zydBnT3H6p/view?usp=sharing";
+  "https://drive.google.com/file/d/11BA25_4VqEYbLW8yO3y8kUMlXPkPnpAz/view?usp=drive_link";
 export const educationMedia = {
   portrait: hcmuteCampus,
   logo: hcmuteLogo,
